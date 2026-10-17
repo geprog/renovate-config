@@ -1,8 +1,27 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["config:base"],
+  "extends": ["config:best-practices", ":pinAllExceptPeerDependencies"],
   "dependencyDashboardApproval": true,
-  "lockFileMaintenance": {
-    "enabled": false
-  }
+  "customManagers": [
+    {
+      "customType": "regex",
+      "description": "Update the pinned commit of the pnpm install script",
+      "managerFilePatterns": [
+        "/(^|/)\\.gitlab-ci\\.ya?ml$/",
+        "/(^|/)\\.gitlab/.+$/",
+        "/(^|/)\\.github/.+$/",
+        "/(^|/)\\.devcontainer/.+$/",
+        "/(^|/)scripts/.+$/",
+        "/(^|/)Dockerfile[^/]*$/",
+        "/(^|/)[^/]+\\.Dockerfile$/"
+      ],
+      "matchStrings": [
+        "https://raw\\.githubusercontent\\.com/pnpm/get\\.pnpm\\.io/(?<currentDigest>[a-f0-9]{40})/install\\.sh"
+      ],
+      "depNameTemplate": "pnpm/get.pnpm.io",
+      "packageNameTemplate": "https://github.com/pnpm/get.pnpm.io",
+      "currentValueTemplate": "main",
+      "datasourceTemplate": "git-refs"
+    }
+  ]
 }
