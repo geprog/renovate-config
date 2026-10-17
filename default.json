@@ -8,9 +8,12 @@
       "description": "Update the pinned commit of the pnpm install script",
       "managerFilePatterns": [
         "/(^|/)\\.gitlab-ci\\.ya?ml$/",
-        "/(^|/)\\.gitlab/.+\\.ya?ml$/",
-        "/(^|/)\\.github/workflows/.+\\.ya?ml$/",
-        "/(^|/)Dockerfile[^/]*$/"
+        "/(^|/)\\.gitlab/.+$/",
+        "/(^|/)\\.github/.+$/",
+        "/(^|/)\\.devcontainer/.+$/",
+        "/(^|/)scripts/.+$/",
+        "/(^|/)Dockerfile[^/]*$/",
+        "/(^|/)[^/]+\\.Dockerfile$/"
       ],
       "matchStrings": [
         "https://raw\\.githubusercontent\\.com/pnpm/get\\.pnpm\\.io/(?<currentDigest>[a-f0-9]{40})/install\\.sh"
