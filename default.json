@@ -2,9 +2,6 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": ["config:best-practices", ":pinAllExceptPeerDependencies"],
   "dependencyDashboardApproval": true,
-  "lockFileMaintenance": {
-    "enabled": false
-  },
   "customManagers": [
     {
       "customType": "regex",
