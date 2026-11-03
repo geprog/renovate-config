@@ -23,5 +23,6 @@
       "currentValueTemplate": "main",
       "datasourceTemplate": "git-refs"
     }
-  ]
+  ],
+  "minimumReleaseAge": "3 days"
 }
