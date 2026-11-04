@@ -24,5 +24,11 @@
       "datasourceTemplate": "git-refs"
     }
   ],
-  "minimumReleaseAge": "3 days"
+  "packageRules": [
+    {
+      "description": "Wait for releases to mature (npm is already covered by security:minimumReleaseAgeNpm from config:best-practices)",
+      "matchDatasources": ["!npm"],
+      "minimumReleaseAge": "3 days"
+    }
+  ]
 }
