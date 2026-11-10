@@ -29,6 +29,11 @@
       "description": "Wait for releases to mature (npm is already covered by security:minimumReleaseAgeNpm from config:best-practices)",
       "matchDatasources": ["!npm"],
       "minimumReleaseAge": "3 days"
+    },
+    {
+      "description": "Only images from Docker Hub have a release timestamp, so others would get stuck",
+      "matchDatasources": ["docker"],
+      "minimumReleaseAgeBehaviour": "timestamp-optional"
     }
   ]
 }
