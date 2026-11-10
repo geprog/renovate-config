@@ -34,6 +34,11 @@
       "description": "Only images from Docker Hub have a release timestamp, so others would get stuck",
       "matchDatasources": ["docker"],
       "minimumReleaseAgeBehaviour": "timestamp-optional"
+    },
+    {
+      "matchManagers": ["terraform"],
+      "matchDepTypes": ["helm_release"],
+      "pinDigests": false
     }
   ]
 }
